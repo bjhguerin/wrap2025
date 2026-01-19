@@ -616,11 +616,8 @@ class LocalBrief:
             spacing3=2,
         )
         
-        # Scrollbar
-        scrollbar = tk.Scrollbar(self.root, command=self.text.yview, bg=BG, troughcolor=BG)
-        self.text.configure(yscrollcommand=scrollbar.set)
-        scrollbar.pack(side="right", fill="y")
-        self.text.pack(side="left", fill="both", expand=True)
+        # No scrollbar - mouse wheel scrolling works fine
+        self.text.pack(fill="both", expand=True)
         
         # Mouse wheel scrolling
         self.text.bind("<MouseWheel>", self._on_scroll)
